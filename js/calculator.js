@@ -41,6 +41,8 @@ export default class Calculator {
       btn.addEventListener("click", () => this.addNumber(btn.textContent));
       
       this.numPad.append(btn);
+
+      if ( i === 0) btn.classList.add('col-span-2');
     }
 
     const point = document.createElement("button");
