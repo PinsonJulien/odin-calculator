@@ -2,6 +2,7 @@ export default class Calculator {
   // Const
   topDisplay = document.getElementById("top-display");
   bottomDisplay = document.getElementById("bottom-display");
+  optionPad = document.getElementById("option-pad");
   numPad = document.getElementById("num-pad");
   operationPad = document.getElementById("operation-pad")
 
@@ -50,6 +51,17 @@ export default class Calculator {
     point.addEventListener("click", () => this.addPoint());
 
     this.numPad.append(point);
+
+    // Generate option pad buttons
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = 'DEL';
+    deleteBtn.addEventListener("click", () => this.eraseLast());
+    this.optionPad.append(deleteBtn);
+
+    const cancelBtn = document.createElement("button");
+    cancelBtn.textContent = 'C';
+    cancelBtn.addEventListener("click", () => this.clear());
+    this.optionPad.append(cancelBtn);
   }
 
   setFirstNumber(number) {
@@ -119,5 +131,19 @@ export default class Calculator {
     
     // reset
     this.ongoingOperation = null;
+  }
+
+  clear() {
+    this.firstNumber = null;
+    this.secondNumber = null;
+    this.ongoingOperation = null;
+
+    this.topDisplay.textContent = '';
+    this.bottomDisplay.textContent = 0;
+  }
+
+  eraseLast() {
+    const sliced = this.bottomDisplay.textContent.slice(0, -1);
+    this.bottomDisplay.textContent = sliced;
   }
 }

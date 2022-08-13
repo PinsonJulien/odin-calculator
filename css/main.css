@@ -40,8 +40,13 @@ main {
   grid-template-rows: auto;
   grid-template-areas:
     "display display display"
+    "optionpad optionpad optionpad"
     "numpad numpad operation"
     "numpad numpad operation";
+}
+
+main > * {
+  background-color: rgb(60, 65, 62);
 }
 
 @media only screen and (max-width: 768px) {
@@ -83,12 +88,23 @@ main {
   grid-template-columns: 1fr;
 }
 
+#option-pad {
+  grid-area: optionpad;
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+#option-pad > button {
+  min-width: 20%;
+}
+
 .col-span-2 {
   grid-column: span 2;
 }
 
 button {
-  background-color: rgb(60, 65, 62);
+  background-color: inherit;
   color: rgb(215, 221, 222);
   font-size: 3em;
   border-style: none;
