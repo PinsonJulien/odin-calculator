@@ -1,0 +1,42 @@
+body {
+  font-family: Roboto;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #111111;
+  color: #E2E2E2;
+  overflow: hidden;
+}
+
+/**********/
+/* Banner */
+/**********/
+#banner {
+  background-color: #1F1F1F;
+  padding: 2em;
+}
+
+#banner h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+/********/
+/* MAIN */
+/********/
+
+main {
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1em;
+  padding: 1em;
+  padding-top: 3em;
+  margin: 0 auto 0 auto;
+}
