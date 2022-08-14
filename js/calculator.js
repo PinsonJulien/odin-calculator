@@ -78,7 +78,11 @@ export default class Calculator {
   }
 
   addNumber(numberString) {
-    this.bottomDisplay.textContent += numberString;
+    const currentBottomText = this.bottomDisplay.textContent;
+    this.bottomDisplay.textContent = 
+      (currentBottomText === '0')
+      ? numberString
+      : currentBottomText + numberString;
   }
 
   addPoint() {
@@ -102,6 +106,7 @@ export default class Calculator {
   calculate() {
     if (this.ongoingOperation === null) return;
     this.setSecondNumber(this.bottomDisplay.textContent);
+    console.log(`${this.firstNumber} ${this.ongoingOperation} ${this.secondNumber}`)
 
     if (this.ongoingOperation === '/' && this.secondNumber === 0) {
       alert("Cannot divide by 0.");
