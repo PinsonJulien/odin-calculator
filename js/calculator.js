@@ -1,5 +1,6 @@
 export default class Calculator {
   // Const
+  pane = document.getElementById("calculator");
   topDisplay = document.getElementById("top-display");
   bottomDisplay = document.getElementById("bottom-display");
   optionPad = document.getElementById("option-pad");

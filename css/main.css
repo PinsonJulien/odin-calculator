@@ -31,18 +31,7 @@ body {
 
 main {
   width: 50%;
-  height: auto;
-  display: grid;
-  padding: 1em;
-  padding-top: 3em;
-  margin: 0 auto 0 auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "display display display"
-    "optionpad optionpad optionpad"
-    "numpad numpad operation"
-    "numpad numpad operation";
+  margin: 3em auto 0 auto;
 }
 
 main > * {
@@ -61,7 +50,21 @@ main > * {
   }
 }
 
+#calculator {
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "display display display"
+    "optionpad optionpad optionpad"
+    "numpad numpad operation"
+    "numpad numpad operation";
+}
+
 #display {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
   grid-area: display;
   background-color: rgb(203, 115, 31);
   display: flex;
